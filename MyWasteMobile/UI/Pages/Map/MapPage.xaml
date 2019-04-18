@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:pages="clr-namespace:MyWasteMobile.UI.Pages;assembly=MyWasteMobile"
+             xmlns:controls="clr-namespace:MyWasteMobile.UI.Controls"
+             x:Class="MyWasteMobile.UI.Pages.Map.MapPage"
+			 Title="Карта">
+    <ContentPage.Content>
+        <StackLayout>
+			<Label Text="MapPage"/>
+		</StackLayout>
+    </ContentPage.Content>
+</pages:BasePage>

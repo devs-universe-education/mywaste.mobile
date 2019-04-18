@@ -1,7 +1,15 @@
 namespace MyWasteMobile
 {
 	public enum AppPages {
-		Main
+		Main,
+		About,
+		Information,
+		Intro,
+		Map,
+		NewsItem,
+		PointInfo,
+		RequestForm,
+		RequestHistory
 	}
 
 	public enum NavigationMode {
