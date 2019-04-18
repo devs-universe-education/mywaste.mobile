@@ -9678,4 +9678,3 @@ namespace MyWasteMobile.Android
 	}
 }
 #pragma warning restore 1591
-

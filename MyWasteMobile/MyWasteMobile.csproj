@@ -21,7 +21,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="UI\Pages\Main\MainPage.xaml">
+    <Compile Update="UI\Pages\Request\RequestHistoryPage.xaml.cs">
+      <DependentUpon>RequestHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Pages\Information\NewsItemPage.xaml.cs">
+      <DependentUpon>NewsItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Pages\Map\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Pages\Introduction\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Pages\Information\InformationPage.xaml.cs">
+      <DependentUpon>InformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Pages\Information\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="UI\Pages\Information\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UI\Pages\Introduction\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UI\Pages\Map\PointInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UI\Pages\Request\RequestFormPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
