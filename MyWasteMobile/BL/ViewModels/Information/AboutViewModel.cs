@@ -4,9 +4,8 @@ using MyWasteMobile.DAL.DataObjects;
 using MyWasteMobile.DAL.DataServices;
 
 namespace MyWasteMobile.BL.ViewModels.Information
-	{
-	public class AnoutViewModel : BaseViewModel
-	{
-	
-	}
+{
+    class AboutViewModel : BaseViewModel
+    {
+    }
 }
