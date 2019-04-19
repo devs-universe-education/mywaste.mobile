@@ -9,11 +9,6 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<Label Text="RequestFormPage"/>
-			<Button Text="InformationPage" Command="{Binding GoToInformationCommand}"/>
-			<Button Text="MapPage" Command="{Binding GoToMapCommand}"/>
-			<Button Text="RequestFormPage" Command="{Binding GoToRequestFormCommand}"/>
-
-			<Button Text="RequestHistoryPage" Command="{Binding GoToRequestHistoryCommand}"/>
 		</StackLayout>
 	</ContentPage.Content>
 </pages:BasePage>

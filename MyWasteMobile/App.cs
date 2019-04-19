@@ -17,7 +17,7 @@ namespace MyWasteMobile
 
 		protected override void OnStart ()
 		{
-			NavigationService.Instance.SetMainPage(AppPages.Information);
+			NavigationService.Instance.SetMainPage(AppPages.Main);
 		}
 	}
 }
