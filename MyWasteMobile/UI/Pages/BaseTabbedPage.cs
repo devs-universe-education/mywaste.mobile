@@ -5,10 +5,10 @@ using Xamarin.Forms;
 
 namespace MyWasteMobile.UI.Pages
 {
-	public class BasePage : ContentPage, IDisposable, IBasePage {
+	public class BaseTabbedPage : TabbedPage, IDisposable, IBasePage {
 		protected BaseViewModel ViewModel => BindingContext as BaseViewModel;
 
-		~BasePage() {
+		~BaseTabbedPage() {
 			Dispose();
 		}
 
@@ -39,4 +39,3 @@ namespace MyWasteMobile.UI.Pages
 		}
 	}
 }
-
