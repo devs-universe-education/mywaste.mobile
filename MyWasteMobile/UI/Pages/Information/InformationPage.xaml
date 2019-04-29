@@ -9,9 +9,88 @@
     <ContentPage.Content>
         <StackLayout>
 			<Label Text="InformationPage"/>
-			<Button Text="AboutPage" Command="{Binding GoToAboutCommand}"/>
-			<Button Text="NewsItemPage" Command="{Binding GoToNewsItemCommand}"/>
-			
+
+			<Image Margin="50" Source="icon.png" HorizontalOptions="CenterAndExpand"/>
+			<Label Text="Девиз проекта&#x0a;краткое описание&#x0a;на несколько строчек." HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+
+			<Grid Margin="10" HorizontalOptions="FillAndExpand">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Label Text="О проекте" TextColor="#1E90FF" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToAboutCommand}"/>
+					</Label.GestureRecognizers>
+				</Label>
+
+				<Label Text="Подружиться" Resources="" TextColor="#1E90FF" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding WebCommand}"/>
+					</Label.GestureRecognizers>
+				</Label>
+			</Grid>
+
+			<StackLayout >
+				<Label Margin="10" Text="Новости и обновления" TextColor="Black"/>
+
+				<ScrollView>
+
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="100" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<Image Source="icon.png" Grid.Column="0" Grid.Row="0">
+							<Image.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding GoToNewsItemCommand}"/>
+							</Image.GestureRecognizers>
+						</Image>
+
+						<Label Text="12 Янв. 2018. Сервис стал доступен в&#x0a;г. Набережные челны" Grid.Column="1" Grid.Row="0">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding GoToNewsItemCommand}"/>
+							</Label.GestureRecognizers>
+						</Label>
+
+						<Image Source="icon.png" Grid.Column="0" Grid.Row="1">
+							<Image.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding GoToNewsItemCommand}"/>
+							</Image.GestureRecognizers>
+						</Image>
+
+						<Label Text="12 Янв. 2018. Сервис стал доступен в&#x0a;г. Набережные челны" Grid.Column="1" Grid.Row="1">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding GoToNewsItemCommand}"/>
+							</Label.GestureRecognizers>
+						</Label>
+
+						<Image Source="icon.png" Grid.Column="0" Grid.Row="2">
+							<Image.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding GoToNewsItemCommand}"/>
+							</Image.GestureRecognizers>
+						</Image>
+
+						<Label Text="12 Янв. 2018. Сервис стал доступен в&#x0a;г. Набережные челны" Grid.Column="1" Grid.Row="2">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding GoToNewsItemCommand}"/>
+							</Label.GestureRecognizers>
+						</Label>
+
+					</Grid>
+
+				</ScrollView>
+
+			</StackLayout>
+
 		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

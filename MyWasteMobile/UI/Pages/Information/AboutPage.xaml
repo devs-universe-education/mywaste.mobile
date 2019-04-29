@@ -8,7 +8,7 @@
 	
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="AboutPage"/>
+			<WebView x:Name="web" Source="https://github.com/binwell-university" VerticalOptions="FillAndExpand" />
 
 		</StackLayout>
     </ContentPage.Content>

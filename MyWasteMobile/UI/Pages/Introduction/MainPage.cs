@@ -7,7 +7,7 @@ namespace MyWasteMobile.UI.Pages.Introduction
 		public MainPage() {
 			On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 			On<Xamarin.Forms.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(true);
-			On<Xamarin.Forms.PlatformConfiguration.Android>().SetBarItemColor(Color.MediumSpringGreen);
+			On<Xamarin.Forms.PlatformConfiguration.Android>().SetBarItemColor(Color.CornflowerBlue);
 		}
 
 		protected override void OnCurrentPageChanged() {

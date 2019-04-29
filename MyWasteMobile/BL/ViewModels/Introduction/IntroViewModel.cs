@@ -6,6 +6,11 @@ namespace MyWasteMobile.BL.ViewModels.Introduction
 	public class IntroViewModel : BaseViewModel
 	{
 
+		//public ICommand GoToInfoCommand => MakeMenuCommand(AppPages.Information);
+		//static ICommand MakeMenuCommand(object page) {
+		//	return GetNavigateToCommand(page, NavigationMode.Root, newNavigationStack: true, withAnimation: false);
+		//}
+
 		public List<Slide> Slides { get; } = new List<Slide>() {
 			new Slide("icon.png", "Я разделяю это сервис для тех, кто заботится об экологии и будущем наших детей"),
 			new Slide("icon.png", "Я разделяю это сервис для тех, кто заботится об экологии и будущем наших детей"),
