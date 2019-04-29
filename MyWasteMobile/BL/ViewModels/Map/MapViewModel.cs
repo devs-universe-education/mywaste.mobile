@@ -7,5 +7,6 @@ namespace MyWasteMobile.BL.ViewModels.Map
 {
 	public class MapViewModel : BaseViewModel
 	{
+		public ICommand GoToPointCommand => GetNavigateToCommand(AppPages.PointInfo);
 	}
 }

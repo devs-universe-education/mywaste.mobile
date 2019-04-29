@@ -8,6 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
 			<Label Text="MapPage"/>
+			<Button Text="PointInfoPage" Command="{Binding GoToPointCommand}"/>
 		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

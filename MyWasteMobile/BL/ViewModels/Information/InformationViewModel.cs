@@ -7,6 +7,8 @@ namespace MyWasteMobile.BL.ViewModels.Information
 {
 	public class InformationViewModel : BaseViewModel
 	{
+		public ICommand GoToAboutCommand => GetNavigateToCommand(AppPages.About);
+		public ICommand GoToNewsItemCommand => GetNavigateToCommand(AppPages.NewsItem);
 
 	}
 }

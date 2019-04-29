@@ -6,8 +6,13 @@
              x:Class="MyWasteMobile.UI.Pages.Request.RequestFormPage"
 			 Title="Новая заявка">
 
+	<pages:BasePage.ToolbarItems>
+		<ToolbarItem x:Name="History" Order="Primary" Text="История" Priority="1" Command="{Binding GoToRequestHistoryCommand}"/>
+	</pages:BasePage.ToolbarItems>
+
 	<ContentPage.Content>
 		<StackLayout>
+			
 			<Label Text="RequestFormPage"/>
 		</StackLayout>
 	</ContentPage.Content>

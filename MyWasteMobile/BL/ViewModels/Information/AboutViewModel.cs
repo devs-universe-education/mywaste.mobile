@@ -5,7 +5,7 @@ using MyWasteMobile.DAL.DataServices;
 
 namespace MyWasteMobile.BL.ViewModels.Information
 	{
-	public class AnoutViewModel : BaseViewModel
+	public class AboutViewModel : BaseViewModel
 	{
 	
 	}

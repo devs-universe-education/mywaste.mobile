@@ -7,5 +7,6 @@ namespace MyWasteMobile.BL.ViewModels.Request
 {
 	public class RequestFormViewModel : BaseViewModel
 	{
+		public ICommand GoToRequestHistoryCommand => GetNavigateToCommand(AppPages.RequestHistory);
 	}
 }
