@@ -15,10 +15,12 @@ namespace MyWasteMobile.Android
 
             base.OnCreate(bundle);
 
-			UserDialogs.Init(this);
-
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+
+			UserDialogs.Init(this);
+			CarouselView.FormsPlugin.Android.CarouselViewRenderer.Init();
+
+			LoadApplication(new App());
         }
     }
 }

@@ -3,11 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:pages="clr-namespace:MyWasteMobile.UI.Pages;assembly=MyWasteMobile"
              xmlns:controls="clr-namespace:MyWasteMobile.UI.Controls"
+			 xmlns:control="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              x:Class="MyWasteMobile.UI.Pages.Introduction.IntroPage">
+
 	
-    <ContentPage.Content>
-        <StackLayout>
-			<Label Text="IntroPage"/>
-        </StackLayout>
-    </ContentPage.Content>
+	<pages:BasePage.ToolbarItems>
+		<ToolbarItem x:Name="Skip" Order="Default" Text="Пропустить" Priority="1" Command="{Binding GoToInfoCommand}"/>
+	</pages:BasePage.ToolbarItems>
+
+
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="0.5" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Label Text="IntroPage"/>
+
+		<ContentView Grid.Row="0">
+			<control:CarouselViewControl ItemsSource="{Binding Slides}"
+                                          ShowIndicators="True"
+                                          ShowArrows="False">
+				<control:CarouselViewControl.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+
+							<ContentView Grid.Row="0" Padding="60,30,60,0">
+								<Image Source="{Binding Image}" Aspect="AspectFit" />
+							</ContentView>
+
+							<ContentView Grid.Row="1" Padding="20,10,20,50">
+								<Label Text="{Binding Description}"
+                                       HorizontalTextAlignment="Center" />
+							</ContentView>
+
+						</Grid>
+					</DataTemplate>
+				</control:CarouselViewControl.ItemTemplate>
+			</control:CarouselViewControl>
+		</ContentView>
+
+	</Grid>
+	
+
 </pages:BasePage>

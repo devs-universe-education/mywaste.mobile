@@ -1,5 +1,6 @@
 using MyWasteMobile.DAL.DataServices;
 using MyWasteMobile.UI;
+using MyWasteMobile.UI.Pages.Introduction;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,7 +18,8 @@ namespace MyWasteMobile
 
 		protected override void OnStart ()
 		{
-			NavigationService.Instance.SetMainTabbedPage(AppPages.Main, AppPages.Information, AppPages.Map, AppPages.RequestForm);
+			//NavigationService.Instance.SetMainTabbedPage(AppPages.Main, AppPages.Information, AppPages.Map, AppPages.RequestForm);
+			NavigationService.Instance.SetMainPage(AppPages.Intro);
 		}
 	}
 }
