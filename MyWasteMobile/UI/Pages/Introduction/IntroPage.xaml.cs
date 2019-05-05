@@ -1,3 +1,5 @@
+using MyWasteMobile.BL.ViewModels.Introduction;
+
 namespace MyWasteMobile.UI.Pages.Introduction
 	{
 	public partial class IntroPage : BasePage
@@ -5,6 +7,7 @@ namespace MyWasteMobile.UI.Pages.Introduction
 		public IntroPage ()
 		{
 			InitializeComponent ();
+			BindingContext = new IntroViewModel();
 		}
 	}
 }

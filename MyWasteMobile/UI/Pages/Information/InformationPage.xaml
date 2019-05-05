@@ -27,7 +27,7 @@
 					</Label.GestureRecognizers>
 				</Label>
 
-				<Label Text="Подружиться" Resources="" TextColor="#1E90FF" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0">
+				<Label Text="Подружиться" TextColor="#1E90FF" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0">
 					<Label.GestureRecognizers>
 						<TapGestureRecognizer Command="{Binding WebCommand}"/>
 					</Label.GestureRecognizers>
