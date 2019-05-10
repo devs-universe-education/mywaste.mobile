@@ -11,9 +11,57 @@
 	</pages:BasePage.ToolbarItems>
 
 	<ContentPage.Content>
-		<StackLayout>
+		<ScrollView><StackLayout>
 			
-			<Label Text="RequestFormPage"/>
-		</StackLayout>
+			
+			<Label Text="К вам домой или в офис приедет машина и купит собранное вторсырьё" HorizontalTextAlignment="Center" Margin="30"/>
+
+			<Label Text="Для этого просто заполните форму ниже и наши операторы свяжутся с вами в самое ближайшее время" HorizontalTextAlignment="Center" Margin="15"/>
+
+			<Picker Title="Выберите вид вторсырья" Margin="15,15,15,15">
+				<Picker.Items>
+					<x:String>Пластик</x:String>
+					<x:String>Стекло</x:String>
+					<x:String>Бумага</x:String>
+					<x:String>Металл</x:String>
+					<x:String>Батарейки</x:String>
+				</Picker.Items>
+			</Picker>
+
+			<Picker Title="Примерный объём" Margin="15,0,15,0">
+				<Picker.Items>
+					<x:String>до 5 кг</x:String>
+					<x:String>от 5 до 10 кг</x:String>
+					<x:String>больше 5 кг</x:String>
+				</Picker.Items>
+			</Picker>
+
+			<Entry Placeholder="откуда забрать" Margin="15,0,15,0"/>
+
+				<Entry Placeholder="Ваш номер телефона"  Keyboard="Telephone" Margin="15,0,15,0"/>
+
+			<Entry Placeholder="Как вас зовут?" Keyboard="Text" Margin="15,0,15,0"/>
+
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+
+					<Label Text="{Binding StatusText}" FontSize="Small" HorizontalTextAlignment="Center" Margin="15,20,10,10" Grid.Column="0" Grid.Row="0"/>
+					<Image Source="{Binding someImage}" Grid.Column="1" Grid.Row="0" Margin="0,20,15,0">
+						<Image.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding CameraCommand}"/>
+						</Image.GestureRecognizers>
+					</Image>
+				</Grid>
+
+				<Button Text="Отправить заявку" BorderRadius="10" HorizontalOptions="Center" BackgroundColor="#1E90FF" TextColor="White" Command="{Binding GoToRequestHistoryCommand}"  Margin="0,30,0,15"/>
+
+			</StackLayout></ScrollView>
+
 	</ContentPage.Content>
 </pages:BasePage>
