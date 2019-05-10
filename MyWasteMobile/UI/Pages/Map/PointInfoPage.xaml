@@ -8,7 +8,36 @@
 	
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="PointInfoPage"/>
-        </StackLayout>
+			<Image Source="icon.png" Aspect="Fill"  HeightRequest="200"/>
+
+			<Label Text="OOO 'Стимул' " FontSize="Large" TextColor="Black" Margin="15" />
+			<Label Text="c 10:00 до 18:00, Пн-Сб" FontSize="Medium" Margin="15,0,0,0" />
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="100" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="1" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="1" />
+				</Grid.RowDefinitions>
+
+				<BoxView Color="LightGray" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="15,0,0,15" />
+				
+				<Label Text="г. Воронеж, ул. Мира, д. 1" Grid.Column="0" Grid.Row="1" Margin="15,0,0,15" />
+				<Image Source="icon.png" Grid.Column="1" Grid.Row="1"/>
+
+				<BoxView Color="LightGray" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" />
+				
+				<Label Text="+7(911)444-44-44" Grid.Column="0" Grid.Row="3" Margin="15,0,0,15"/>
+				<Image Source="icon.png" Grid.Column="1" Grid.Row="3"/>
+				
+				<BoxView Color="LightGray" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,20,0,0"/>
+			</Grid>
+		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>
