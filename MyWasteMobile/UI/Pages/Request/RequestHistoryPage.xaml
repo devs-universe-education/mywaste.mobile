@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:pages="clr-namespace:MyWasteMobile.UI.Pages;assembly=MyWasteMobile"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:pages="clr-namespace:MyWasteMobile.UI.Pages;assembly=MyWasteMobile"
-             xmlns:controls="clr-namespace:MyWasteMobile.UI.Controls"
-             x:Class="MyWasteMobile.UI.Pages.Request.RequestHistoryPage"
-			 Title="История заказов">
-	
-    <ContentPage.Content>
-        <StackLayout>
-			<Label Text="RequestHistoryPage"/>
+             xmlns:fastGrid="clr-namespace:MyWasteMobile.UI.Controls.FastGrid;assembly=MyWasteMobile"
+             x:Class="MyWasteMobile.UI.Pages.Request.RequestHistoryPage" Title="История заказов">
+	<ScrollView>
+		<StackLayout>
+
+			<fastGrid:FastGridView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                               IsPullToRefreshEnabled="False" x:Name="fastGridView"
+                               ItemsSource="{Binding ItemsSource}" 
+                               ItemSelectedCommand="{Binding ItemSelectedCommand}"
+                               RowSpacing="1"
+                               ColumnSpacing="1"
+                               AbsoluteLayout.LayoutBounds="0,0,1,1"
+                               AbsoluteLayout.LayoutFlags="All"
+                               />
+
+
 		</StackLayout>
-    </ContentPage.Content>
+	</ScrollView>
 </pages:BasePage>

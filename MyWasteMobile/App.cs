@@ -19,7 +19,7 @@ namespace MyWasteMobile
 		protected override void OnStart ()
 		{
 			NavigationService.Instance.SetMainTabbedPage(AppPages.Main, AppPages.Information, AppPages.Map, AppPages.RequestForm);
-			//NavigationService.Instance.SetMainPage(AppPages.PointInfo);
+			//NavigationService.Instance.SetMainPage(AppPages.RequestHistory);
 		}
 	}
 }

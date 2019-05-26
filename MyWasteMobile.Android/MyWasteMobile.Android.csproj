@@ -80,6 +80,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FastGrid\EndlessRecyclerViewScrollListener.cs" />
+    <Compile Include="FastGrid\FastGridAdapter.cs" />
+    <Compile Include="FastGrid\FastGridViewRenderer.cs" />
+    <Compile Include="FastGrid\FormsToNativeDroid.cs" />
+    <Compile Include="FastGrid\SmoothGridLayoutManager.cs" />
+    <Compile Include="FastGrid\SwipeRefreshLayoutWithDisabling.cs" />
+    <Compile Include="FastGrid\ViewHolders.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
