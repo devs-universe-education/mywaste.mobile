@@ -5,16 +5,33 @@ using System.Windows.Input;
 using MyWasteMobile.UI.Pages.Request.DataObjects;
 using MvvmHelpers;
 using Xamarin.Forms;
+using Plugin.Messaging;
 
-namespace MyWasteMobile.BL.ViewModels.Request {
-	public class RequestHistoryViewModel : BaseViewModel {
+namespace MyWasteMobile.BL.ViewModels.Request
+
+{
+	public class RequestHistoryViewModel : BaseViewModel
+	{
+
 		ObservableRangeCollection<object> _itemsSource = new ObservableRangeCollection<object>();
 
 		ICommand _itemSelectedCommand;
 
+		public ICommand MakeCall => MakeCommand(OnCallCommand);
+
+
+
 		public ICommand ItemSelectedCommand => _itemSelectedCommand ??
 											   (_itemSelectedCommand = new Command(async (o) =>
 												   await ItemSelectedCommandAsync(o)));
+
+		void OnCallCommand()
+		{
+			var phoneDialer = CrossMessaging.Current.PhoneDialer;
+			if (phoneDialer.CanMakePhoneCall)
+				phoneDialer.MakePhoneCall("+88888888");
+
+		}
 
 		public ObservableRangeCollection<object> ItemsSource {
 			get => _itemsSource;

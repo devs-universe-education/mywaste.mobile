@@ -6,6 +6,13 @@
              x:Class="MyWasteMobile.UI.Pages.Request.RequestHistoryPage" Title="История заказов">
 	<ScrollView>
 		<StackLayout>
+			<Frame BackgroundColor="LightGreen">
+				<Label Text="Горячая линия: +8 (800) 345 - 12 - 11" FontSize="Medium" HorizontalTextAlignment="Center">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding MakeCall}"/>
+					</Label.GestureRecognizers>
+				</Label>
+			</Frame>
 
 			<fastGrid:FastGridView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                                IsPullToRefreshEnabled="False" x:Name="fastGridView"
