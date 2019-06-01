@@ -6,6 +6,7 @@ using MyWasteMobile.UI.Pages.Request.DataObjects;
 using MvvmHelpers;
 using Xamarin.Forms;
 using Plugin.Messaging;
+using Xamarin.Essentials;
 
 namespace MyWasteMobile.BL.ViewModels.Request
 
@@ -25,12 +26,15 @@ namespace MyWasteMobile.BL.ViewModels.Request
 											   (_itemSelectedCommand = new Command(async (o) =>
 												   await ItemSelectedCommandAsync(o)));
 
-		void OnCallCommand()
+		async void OnCallCommand()
 		{
 			var phoneDialer = CrossMessaging.Current.PhoneDialer;
-			if (phoneDialer.CanMakePhoneCall)
-				phoneDialer.MakePhoneCall("+88888888");
+			var answer = false;
 
+			if (phoneDialer.CanMakePhoneCall)
+				answer = await Application.Current.MainPage.DisplayAlert("", "+888888", "Call", "Cancel");
+				if(answer)
+					phoneDialer.MakePhoneCall("+88888888");
 		}
 
 		public ObservableRangeCollection<object> ItemsSource {

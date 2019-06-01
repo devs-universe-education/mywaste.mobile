@@ -28,7 +28,7 @@
 				</Picker.Items>
 			</Picker>
 
-			<Picker Title="Примерный объём" Margin="15,0,15,0">
+			<Picker SelectedItem="{Binding SelectedWaste}" Title="Примерный объём" Margin="15,0,15,0">
 				<Picker.Items>
 					<x:String>до 5 кг</x:String>
 					<x:String>от 5 до 10 кг</x:String>
@@ -38,9 +38,9 @@
 
 			<Entry Placeholder="откуда забрать" Margin="15,0,15,0"/>
 
-				<Entry Placeholder="Ваш номер телефона"  Keyboard="Telephone" Margin="15,0,15,0"/>
+			<Entry Text="{Binding UserPhone}" Placeholder="Ваш номер телефона"  Keyboard="Telephone" Margin="15,0,15,0"/>
 
-			<Entry Placeholder="Как вас зовут?" Keyboard="Text" Margin="15,0,15,0"/>
+			<Entry Text="{Binding UserName}" Placeholder="Как вас зовут?" Keyboard="Text" Margin="15,0,15,0"/>
 
 				<Grid>
 					<Grid.ColumnDefinitions>
@@ -59,7 +59,9 @@
 					</Image>
 				</Grid>
 
-				<Button Text="Отправить заявку" BorderRadius="10" HorizontalOptions="Center" BackgroundColor="#1E90FF" TextColor="White" Command="{Binding GoToRequestHistoryCommand}"  Margin="0,30,0,15"/>
+				<Button Text="Отправить заявку" BorderRadius="10" HorizontalOptions="Center" BackgroundColor="#1E90FF" TextColor="White" Command="{Binding MakeRequestCommand}"  Margin="0,30,0,15"/>
+
+				<Label Text="{Binding PrePriceMessage}"/>
 
 			</StackLayout></ScrollView>
 

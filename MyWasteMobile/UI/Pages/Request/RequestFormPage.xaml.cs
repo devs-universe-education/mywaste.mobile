@@ -1,3 +1,5 @@
+using MyWasteMobile.BL.ViewModels.Request;
+
 namespace MyWasteMobile.UI.Pages.Request
 {
 	public partial class RequestFormPage : BasePage
@@ -5,6 +7,8 @@ namespace MyWasteMobile.UI.Pages.Request
 		public RequestFormPage ()
 		{
 			InitializeComponent ();
+
+			BindingContext = new RequestFormViewModel();
 		}
 	}
 }
