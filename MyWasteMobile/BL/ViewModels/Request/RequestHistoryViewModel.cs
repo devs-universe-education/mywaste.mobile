@@ -17,6 +17,7 @@ namespace MyWasteMobile.BL.ViewModels.Request
 		ObservableRangeCollection<object> _itemsSource = new ObservableRangeCollection<object>();
 
 		ICommand _itemSelectedCommand;
+		private string hotline = "+89993543454";
 
 		public ICommand MakeCall => MakeCommand(OnCallCommand);
 
@@ -32,9 +33,9 @@ namespace MyWasteMobile.BL.ViewModels.Request
 			var answer = false;
 
 			if (phoneDialer.CanMakePhoneCall)
-				answer = await Application.Current.MainPage.DisplayAlert("", "+888888", "Call", "Cancel");
-				if(answer)
-					phoneDialer.MakePhoneCall("+88888888");
+				answer = await ShowQuestion("Набрать номер горячей линии?", hotline, "Да", "Нет");
+			if (answer)
+					phoneDialer.MakePhoneCall(hotline);
 		}
 
 		public ObservableRangeCollection<object> ItemsSource {
@@ -52,7 +53,7 @@ namespace MyWasteMobile.BL.ViewModels.Request
 
 		async Task ItemSelectedCommandAsync(object obj) {
 			if (obj is RequestObject request)
-				await Application.Current.MainPage.DisplayAlert(request.Address, request.Waste + " " + request.Status, "Ok");
+				await ShowAlert(request.Address, request.Waste + " " + request.Status, "OK");
 		}
 
 		void GenerateSource() {
@@ -63,6 +64,14 @@ namespace MyWasteMobile.BL.ViewModels.Request
 			var items = new List<object>
 			{
 				new CategoryObject {Name = "Активные заказы"},
+
+				new RequestObject()
+				{
+					Address = "г. Воронеж, ул. Соврасова, д. 12, кв. 4.",
+					Waste = "Пластик, 10 - 20 кг.",
+					Status = "Статус: вывоз запланирован на 19 Янв 2019, с 10:00 до 18:00, водитель позвонит в день вывоза"
+				},
+
 				new RequestObject()
 				{
 					Address = "г. Воронеж, ул. Соврасова, д. 12, кв. 4.",

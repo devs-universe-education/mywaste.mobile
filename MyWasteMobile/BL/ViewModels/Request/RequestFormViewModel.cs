@@ -11,22 +11,60 @@ namespace MyWasteMobile.BL.ViewModels.Request
 {
 	public class RequestFormViewModel : BaseViewModel
 	{
-		public ICommand MakeRequestCommand => GetNavigateToCommand(AppPages.RequestHistory);
+		public ICommand GoToRequestHistoryCommand => GetNavigateToCommand(AppPages.RequestHistory);
+		public ICommand MakeRequestCommand => MakeCommand(TestCommand);
 
 		public ICommand CameraCommand => MakeCommand(OnCameraCommand);
 
 		//ICommand _MakeRequest;
 
-		//public ICommand MakeRequest => _MakeRequest ??
+		//public ICommand MakeRequestCommand => _MakeRequest ??
 		//									   (_MakeRequest = new Command(async (o) =>
 		//										   await ItemSelectedCommandAsync(o)));
 
 		Image _img = new Image();
 
 
-		async Task ItemSelectedCommandAsync(object obj) {
-			if (obj is RequestObject request)
-				await Application.Current.MainPage.DisplayAlert(request.Address, request.Waste + " " + request.Status, "Ok");
+		string selectedwaste;
+		public string SelectedWaste
+		{
+			get { return selectedwaste; }
+			set { selectedwaste = value; }
+		}
+
+		string selectedvalue;
+		public string SelectedValue {
+			get { return selectedvalue; }
+			set { selectedvalue = value; }
+		}
+
+		string userphone;
+		public string UserPhone {
+			get { return userphone; }
+			set { userphone = value; }
+		}
+
+		string username;
+		public string UserName {
+			get { return username; }
+			set { username = value; }
+		}
+
+		async void TestCommand()
+		{
+			if (selectedwaste == null || selectedvalue == null || userphone == null || username == null)
+			{
+				await ShowAlert("Вы должны заполнить все поля", "", "ок");
+			}
+			else
+			{
+				await ShowAlert("Поля заполнены", "asdasd", "OK");
+				//await NavigateTo(AppPages.RequestHistory, NavigationMode.Normal);
+				NavigateTo(AppPages.RequestHistory);
+				//await Application.Current.MainPage.DisplayAlert("Поля заполнены", "", "ок");
+				//GetNavigateToCommand(AppPages.RequestHistory);
+				//await NavigateTo(AppPages.RequestHistory, NavigationMode.Normal);
+			}
 		}
 
 		public string StatusText { get; } = "Добавьте, пожалуйста, фотографию вторсырья, чтобы нам было проще подобрать автомобиль";
@@ -35,6 +73,8 @@ namespace MyWasteMobile.BL.ViewModels.Request
 			get { return ImageSource.FromFile("icon.png"); }
 			set { someImage = value; }
 		}
+
+		
 
 		async void OnCameraCommand() {
 			await CrossMedia.Current.Initialize();

@@ -46,9 +46,7 @@ namespace MyWasteMobile.UI.Controls
 					 };
 				 });
 
-		public IList<Pin> MapPins { get; set; }
-
-		
+		public IList<Pin> MapPins { get; set; }		
 
 
 		public static readonly BindableProperty MapPositionProperty = BindableProperty.Create(

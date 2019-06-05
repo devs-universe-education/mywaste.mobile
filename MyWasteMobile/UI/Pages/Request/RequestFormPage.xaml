@@ -18,7 +18,7 @@
 
 			<Label Text="Для этого просто заполните форму ниже и наши операторы свяжутся с вами в самое ближайшее время" HorizontalTextAlignment="Center" Margin="15"/>
 
-			<Picker Title="Выберите вид вторсырья" Margin="15,15,15,15">
+			<Picker SelectedItem="{Binding SelectedWaste}" Title="Выберите вид вторсырья" Margin="15,15,15,15">
 				<Picker.Items>
 					<x:String>Пластик</x:String>
 					<x:String>Стекло</x:String>
@@ -28,7 +28,7 @@
 				</Picker.Items>
 			</Picker>
 
-			<Picker SelectedItem="{Binding SelectedWaste}" Title="Примерный объём" Margin="15,0,15,0">
+			<Picker SelectedItem="{Binding SelectedValue}" Title="Примерный объём" Margin="15,0,15,0">
 				<Picker.Items>
 					<x:String>до 5 кг</x:String>
 					<x:String>от 5 до 10 кг</x:String>
