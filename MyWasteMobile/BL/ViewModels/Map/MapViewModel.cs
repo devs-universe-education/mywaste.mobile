@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using MyWasteMobile.DAL.DataObjects;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -9,30 +11,58 @@ namespace MyWasteMobile.BL.ViewModels.Map {
 	public class MapViewModel : BaseViewModel {
 
 
-		public ICommand GoToPointCommand => GetNavigateToCommand(AppPages.PointInfo);
+		public ObservableCollection<BindableLocation> Locations { get; set; }
 
-		public ICommand FilterCommand => MakeCommand(OnSampleCommand);
+		public ICommand PinCommand;
 
-		async void OnSampleCommand() {
-			await ShowAlert("New alert", "Just a message", "OK");
+		public MapViewModel() {
+			var locations = new List<BindableLocation>();
+			var location = new BindableLocation {
+				LocationAddress = "ул. Олеко Дундича, 1",
+				LocationHours = "круглосуточно",
+				Latitude = 51.651228,
+				Longitude = 39.134749,
+				ActionCommand = new Command(PinSelected)
+			};
+			locations.Add(location);
+
+			location = new BindableLocation {
+				LocationAddress = "ул. 9-го Января, 125",
+				LocationHours = "с 10:00 до 15:00",
+				Latitude = 51.673000,				
+				Longitude = 39.151882,
+				ActionCommand = new Command(PinSelected)
+			};
+
+			locations.Add(location);
+
+			location = new BindableLocation {
+				LocationAddress = "ул. Сакко и Ванцетти, 52-56",
+				LocationHours = "c 10:00 до 17:00",
+				Latitude = 51.681639,
+				Longitude = 39.220691,
+				ActionCommand = new Command(PinSelected)
+
+			};
+
+			locations.Add(location);
+
+			Locations = new ObservableCollection<BindableLocation>(locations);
 		}
 
-
-
-		private Position _myPosition = new Position(51.661518, 39.190122);
-		public Position MyPosition { get { return _myPosition; } set { _myPosition = value; OnPropertyChanged(); } }
-
-		private ObservableCollection<Pin> _pinCollection = new ObservableCollection<Pin>()
+		public void PinSelected(object param)
 		{
-			new Pin {Position = new Position(51.665526, 39.176226), Type = PinType.Generic, Label = "bind point name", Address = "bind adress"},
-			new Pin {Position = new Position(51.697630, 39.194632), Type = PinType.Generic, Label = "bind point name", Address = "bind adress"},
-			new Pin {Position = new Position(51.636469, 39.249251), Type = PinType.Generic, Label = "bind point name", Address = "bind adress"}			
-		};
-	
-		public ObservableCollection<Pin> PinCollection { get { return _pinCollection; } set { _pinCollection = value; OnPropertyChanged(); } }
+			var pin = param as Pin;
 
-		
-
+			if (pin != null)
+			{
+				//NavigateTo(AppPages.PointInfo);
+				//Device.BeginInvokeOnMainThread(() =>
+				{
+					ShowAlert(pin.Label,pin.Address,"ok");
+				};
+			}
+		}
 	}
 }
 	

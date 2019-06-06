@@ -27,9 +27,10 @@
 				</Grid.RowDefinitions>
 
 				<BoxView Color="LightGray" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="15,0,0,15" />
-				
-				<Label Text="г. Воронеж, ул. Мира, д. 1" Grid.Column="0" Grid.Row="1" Margin="15,0,0,15" />
+				<!--<Label Text="г. Воронеж, ул. Мира, д. 1" Grid.Column="0" Grid.Row="1" Margin="15,0,0,15" /> -->
 
+				<Label Text="{Binding PointAddress}" Grid.Column="0" Grid.Row="1" Margin="15,0,0,15" />
+						
 				<Image Source="icon.png" Grid.Column="1" Grid.Row="1">
 					<Image.GestureRecognizers>
 						<TapGestureRecognizer Command="{Binding OpenNavi}"/>

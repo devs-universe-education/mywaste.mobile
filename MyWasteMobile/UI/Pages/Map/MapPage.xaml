@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:pages="clr-namespace:MyWasteMobile.UI.Pages;assembly=MyWasteMobile"
              xmlns:controls="clr-namespace:MyWasteMobile.UI.Controls"
-			 xmlns:myMap="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-			 xmlns:Map="clr-namespace:MyWasteMobile.BL.ViewModels.Map"
 			 xmlns:local="clr-namespace:MyWasteMobile.UI.Controls"
+
+				xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+				xmlns:behaviours="clr-namespace:MyWasteMobile.UI.Behaviours;assembly=MyWasteMobile"
+
 			 x:Class="MyWasteMobile.UI.Pages.Map.MapPage"
 			 Title="Пункты приёма">
 
 	<ContentPage.Content>
-
-
 		<StackLayout>
 				<ScrollView Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
 					<StackLayout Orientation="Horizontal">
@@ -24,10 +24,16 @@
 					</StackLayout>
 				</ScrollView>
 
-			<local:BindableMap MapType="Street" MapPosition="{Binding MyPosition}" MapPins="{Binding PinCollection}"/>
-			
+<!--<local:BindableMap MapType="Street" MapPosition="{Binding MyPosition}" MapPins="{Binding PinCollection}"/>
+			-->
+			<maps:Map x:Name="LocationMap" MapType="Street" VerticalOptions="FillAndExpand">
+				<maps:Map.Behaviors>
+					<behaviours:BindableMapBehavior ItemsSource="{Binding Locations}" />
+				</maps:Map.Behaviors>
+			</maps:Map>
+
 
 		</StackLayout>
-    </ContentPage.Content>
+	</ContentPage.Content>
 	
 </pages:BasePage>
